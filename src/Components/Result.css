@@ -1,0 +1,24 @@
+.result-contain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: #3b3b3d solid 1px;
+  background-color: #3b3b3d;
+  opacity: 85%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+h1 {
+  font-size: x-large;
+  color: white;
+}
+
+#value {
+  margin-right: 5%;
+}
+
+#int-queue {
+  margin-left: 5%;
+  color: #f90;
+}

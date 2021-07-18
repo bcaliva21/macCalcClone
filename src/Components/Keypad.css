@@ -1,0 +1,91 @@
+body {
+  flex-direction: row;
+  align-content: flex-start;
+  margin: 0;
+}
+
+.break {
+  height: 0;
+  width: 100%;
+}
+
+.keypad {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.top-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+.top-row:first-child {
+  border-left: #3b3b3d solid 1px;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+#seven {
+  border-left: #3b3b3d solid 1px;
+}
+#four {
+  border-left: #3b3b3d solid 1px;
+}
+#one {
+  border-left: #3b3b3d solid 1px;
+}
+
+.bottom-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+label {
+  padding: 3%;
+  font-size: x-large;
+  text-align: center;
+  flex-basis: 100%;
+  border-bottom: #3b3b3d solid 1px;
+  border-right: #3b3b3d solid 1px;
+}
+
+label:hover {
+  background-color: cadetblue;
+}
+
+#zero {
+  flex-grow: 1;
+  min-width: 43%;
+  border-bottom-left-radius: 5px;
+  border-left: #3b3b3d solid 1px;
+}
+
+#decimal {
+  min-width: 15%;
+}
+
+#equals {
+  border-bottom-right-radius: 5px;
+  min-width: 15%;
+}
+
+.operator {
+  background-color: #f90;
+}
+
+.integer {
+  background-color: #8f8f8f;
+}
+
+.top-row {
+  background-color: #5f6062;
+}

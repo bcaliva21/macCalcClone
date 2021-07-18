@@ -1,0 +1,13 @@
+::before {
+  justify-self: center;
+}
+
+body {
+  display: flex;
+  margin: 10% auto;
+  color: white;
+  border-radius: 6px;
+  max-width: 200px;
+  resize: none;
+  box-shadow: 100px 100px 50px;
+}
