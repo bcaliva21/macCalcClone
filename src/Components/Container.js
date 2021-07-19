@@ -7,13 +7,15 @@ import './Keypad.css'
 
 function Container () {
 
-  const operations = ['+', '÷', '-', 'x'];
+  const operations = ['+', '÷', '-', '×'];
   const [ answer, setAnswer ] = useState(0);
   const [ intQueue, setIntQueue ] = useState(null);
   const [ operator, setOperator ] = useState('');
+  const [ hasAnswer, setHasAnswer ] = useState(false);
 
   const displayValues = (e) => {
     const input = e.target.innerText;
+    setHasAnswer(true);
 
     if (input === '.' && answer.indexOf('.') > 0) {
       return;
@@ -49,6 +51,12 @@ function Container () {
     }
   }
 
+  const handlePercentage = () => {
+    let value = answer;
+
+    setAnswer(value * .01);
+  }
+
   const handleEquals = (e) => {
     if (intQueue !== null) {
       if (operator === '+') {
@@ -56,7 +64,7 @@ function Container () {
         setAnswer(sum);
         setIntQueue(null);
       }
-      if (operator === 'x') {
+      if (operator === '×') {
         const product = Number(intQueue) * Number(answer)
         setAnswer(product);
         setIntQueue(null);
@@ -72,6 +80,7 @@ function Container () {
         setIntQueue(null);
       }
     }
+    setHasAnswer(false)
   }
 
   const handleCompute = (e) => {
@@ -81,7 +90,7 @@ function Container () {
         setAnswer('');
         setIntQueue(sum);
       }
-      if (operator === 'x') {
+      if (operator === '×') {
         const product = Number(intQueue) * Number(answer)
         setAnswer('');
         setIntQueue(product);
@@ -97,6 +106,8 @@ function Container () {
         setIntQueue(quotient);
       }
   }
+
+  setHasAnswer(false)
 }
 
 // need to figure out how to handle multiple operations chained together
@@ -147,7 +158,9 @@ function Container () {
       handleClear = { handleClear }
       handleCompute = { handleCompute }
       handleEquals = { handleEquals }
-      handleSign = { handleSign }/>
+      handleSign = { handleSign }
+      hasAnswer = { hasAnswer }
+      handlePercentage = { handlePercentage }/>
     </div>
   )
 }

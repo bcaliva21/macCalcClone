@@ -1,14 +1,15 @@
 import React from 'react'
 import './Keypad.css';
 
-function Keypad({ displayValues, handleOperations, handleClear, handleCompute, handleEquals, handleSign }) {
+function Keypad({ displayValues, handleOperations, handleClear,
+   handleCompute, handleEquals, handleSign, hasAnswer, handlePercentage }) {
   return (
     <div>
       <div className='keypad'>
         <div className='top-row'>
-          <label onClick={handleClear}>AC</label>
+          {!hasAnswer ? <label onClick={handleClear}>AC</label> : <label onClick={handleClear}>C</label>}
           <label className='pos-neg' onClick={handleSign}>⁺∕₋</label>
-          <label>%</label>
+          <label onClick={handlePercentage}>%</label>
           <label className='operator' onClick={handleOperations}>÷</label>
         </div>
         <div className='break'></div>
